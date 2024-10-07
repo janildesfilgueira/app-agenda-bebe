@@ -1,8 +1,8 @@
-import { Button,Text,View, TextInput } from "react-native";
+import { Button,Text,View, TextInput, StyleSheet } from "react-native";
 
 const ViewDadosCrianca = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>Hora</Text>
             <TextInput />
             <Text>Nome da Atividade</Text>
@@ -11,5 +11,20 @@ const ViewDadosCrianca = () => {
         </View>
     )
 }
-
+const styles = StyleSheet.create({
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "30px",
+      height: "90%",
+      width: "90%"
+    },
+    tituloTexto: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+});
+  
 export default ViewDadosCrianca;

@@ -1,25 +1,34 @@
 import { Button,Text,View, TextInput, StyleSheet } from "react-native";
+import { useState } from "react";
 
 const ViewDadosCrianca = () => {
+    const [hora, onChangeHora] = useState("00");
+    const [minuto, onChangeMinuto] = useState("00");
+    const [nomeAtividade, onChangeNomeAtividade] = useState("Mamentação");
+
     return (
         <View style={styles.container}>
             <Text style={styles.tituloTexto}>
                 Adicione a próxima notificação
             </Text>
-            
+
             <Text style={styles.tituloTexto}>
                 Hora
             </Text>
             <View style={styles.containerLinha}>
-                <TextInput 
+                <TextInput
+                    value={hora}
                     style={styles.inputHora}
-                    maxLength={2}   inputMode="numeric" 
+                    maxLength={2}   inputMode="numeric"
+                    onChange={onChangeHora}
                 />
                 <Text style={styles.tituloTexto}>
                 :
                 </Text>
-                <TextInput 
+                <TextInput
+                    value={minuto}
                     style={styles.inputHora}
+                    onChange={onChangeMinuto}
                     maxLength={2}
                     inputMode="numeric"
                 />
@@ -28,7 +37,11 @@ const ViewDadosCrianca = () => {
             <Text style={styles.tituloTexto}>
                 Nome da Atividade
             </Text>
-            <TextInput style={styles.input} />
+            <TextInput
+                onChange={onChangeNomeAtividade}
+                value={nomeAtividade} 
+                style={styles.input} 
+            />
 
             <Button title="Salvar"/>
         </View>

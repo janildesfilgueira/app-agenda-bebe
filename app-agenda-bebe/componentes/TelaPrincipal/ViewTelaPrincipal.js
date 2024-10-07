@@ -1,11 +1,17 @@
 import React from 'react';
 import {Button, View, Text, StyleSheet} from 'react-native';
 
-const ViewTelaPrincipal = () => {
+const ViewTelaPrincipal = ({ navigation }) => {
+
+  function navegarTelaDadosCrianca() {
+    navigation.navigate('DadosCrianca')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.tituloTexto}>Lembretes</Text>
       <Button
+        onPress={() => navegarTelaDadosCrianca()}
         title="Adicionar o Lembrete"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"

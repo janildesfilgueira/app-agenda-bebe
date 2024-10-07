@@ -1,11 +1,9 @@
 import { StyleSheet, View } from 'react-native';
-import ViewTelaPrincipal from './componentes/TelaPrincipal/ViewTelaPrincipal';
+import Navegacao from './componentes/Navegacao/Navegacao';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ViewTelaPrincipal />
-    </View>
+      <Navegacao />
   );
 }
 

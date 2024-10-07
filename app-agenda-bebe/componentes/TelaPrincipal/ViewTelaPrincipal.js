@@ -9,7 +9,10 @@ const ViewTelaPrincipal = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.tituloTexto}>Lembretes</Text>
+      <Text style={styles.tituloTexto}>
+        Lembretes
+      </Text>
+
       <Button
         onPress={() => navegarTelaDadosCrianca()}
         title="Adicionar o Lembrete"
@@ -24,8 +27,9 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: 'center',
+    alignItems: "center",
     justifyContent: "space-between",
+    padding: 40,
     height: "90%",
     width: "90%"
   },

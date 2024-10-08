@@ -9,7 +9,6 @@ export class GestorAlarme {
 
     public async listarAlarme(){
         let lista: Array<Alarme> = await obterAlarmes();
-
         return lista;
     }
 }

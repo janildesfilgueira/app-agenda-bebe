@@ -11,13 +11,9 @@ const ViewDadosCrianca = () => {
     function salvarDadosCrianca() {
         const gestorAlarme = new GestorAlarme();
 
-        console.log("nomeAtividade", nomeAtividade)
-
         gestorAlarme.adicionar(
             new Alarme(1, new Date(), nomeAtividade)
         )
-
-        console.log(gestorAlarme.listarAlarme())
     }
 
     return (

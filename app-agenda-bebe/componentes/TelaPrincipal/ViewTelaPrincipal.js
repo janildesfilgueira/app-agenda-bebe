@@ -7,6 +7,8 @@ const ViewTelaPrincipal = ({ navigation }) => {
     navigation.navigate('DadosCrianca')
   }
 
+  //        gestorAlarme.listarAlarme().then((lista) => console.log(lista))
+
   return (
     <View style={styles.container}>
       <Text style={styles.tituloTexto}>

@@ -5,14 +5,23 @@ import {
   StyleSheet
 } from 'react-native';
 
-type ItemProps = {hora: Date, atividade: string};
+type ItemProps = {
+    hora: Date, 
+    atividade: string
+};
 
-const ViewItem = ({hora, atividade}: ItemProps) => (
+const ViewItem = ({hora, atividade}: ItemProps) => {
+ 
+ const novaHora = new Date(hora)
+ const horaFormatada = `${novaHora.getHours()}:${novaHora.getMinutes()}`
+
+ return (
   <View style={styles.item}>
-    <Text style={styles.title}>Hora: {hora == undefined ? hora.getHours().toString() : ""}</Text>
+    <Text style={styles.title}>Hora: {hora == undefined ? "" : horaFormatada}</Text>
     <Text style={styles.title}>Atividade: {atividade}</Text>
   </View>
-);
+  )
+};
 
 const styles = StyleSheet.create({
     item: {

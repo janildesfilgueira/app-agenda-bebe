@@ -11,12 +11,22 @@ const Navegacao = () => (
             <Stack.Screen
                 name="TelaPrincipal"
                 component={ViewTelaPrincipal}
-                options={{title: 'Lembrentes'}}
+                options={{
+                  headerStyle: {
+                    backgroundColor: '#f9c2ff',
+                  },
+                  title: 'Lembrentes'
+                }}
             />
             <Stack.Screen
                 name="DadosCrianca"
                 component={ViewDadosCrianca}
-                options={{title: 'Dados da criança'}}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#f9c2ff',
+                    },
+                    title: 'Dados da criança'
+                }}
             />
         </Stack.Navigator>
     </NavigationContainer>

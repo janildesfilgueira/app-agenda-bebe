@@ -63,6 +63,7 @@ const ViewDadosCrianca = ({ navigation }) => {
 
             <Button 
                 onPress={() => salvarDadosCrianca()}title="Salvar"
+                color="#841584"
             />
 
         </View>

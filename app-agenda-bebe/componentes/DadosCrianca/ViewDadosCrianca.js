@@ -1,10 +1,20 @@
 import { Button,Text,View, TextInput, StyleSheet } from "react-native";
 import { useState } from "react";
+import { GestorAlarme } from "../../asyncStorage/api/gestorAlarme";
+import { Alarme } from "../../asyncStorage/modelo/alarme";
 
 const ViewDadosCrianca = () => {
     const [hora, onChangeHora] = useState("00");
     const [minuto, onChangeMinuto] = useState("00");
     const [nomeAtividade, onChangeNomeAtividade] = useState("Mamentação");
+
+    function salvarDadosCrianca() {
+        const gestorAlarme = new GestorAlarme();
+
+        gestorAlarme.adicionar(
+            new Alarme(1, new Date(), nomeAtividade)
+        )
+    }
 
     return (
         <View style={styles.container}>
@@ -43,7 +53,10 @@ const ViewDadosCrianca = () => {
                 style={styles.input} 
             />
 
-            <Button title="Salvar"/>
+            <Button 
+                onPress={() => salvarDadosCrianca()}title="Salvar"
+            />
+
         </View>
     )
 }

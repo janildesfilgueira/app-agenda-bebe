@@ -3,6 +3,8 @@ import { useState } from "react";
 import { GestorAlarme } from "../../asyncStorage/api/gestorAlarme";
 import { Alarme } from "../../asyncStorage/modelo/alarme";
 
+import uuid from 'react-native-uuid';
+
 const ViewDadosCrianca = ({ navigation }) => {
     const [hora, onChangeHora] = useState("00");
     const [minuto, onChangeMinuto] = useState("00");
@@ -12,7 +14,7 @@ const ViewDadosCrianca = ({ navigation }) => {
         const gestorAlarme = new GestorAlarme();
 
         gestorAlarme.adicionar(
-            new Alarme(1, new Date(), nomeAtividade)
+            new Alarme(uuid.v4(), new Date(), nomeAtividade)
         )
 
         navigation.goBack()

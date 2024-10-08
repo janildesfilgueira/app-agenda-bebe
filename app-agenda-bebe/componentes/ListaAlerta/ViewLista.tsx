@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   FlatList,
@@ -6,32 +6,35 @@ import {
   StatusBar,
 } from 'react-native';
 import ViewItem from './ViewItem';
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
+import { useIsFocused } from '@react-navigation/native';
+import { GestorAlarme } from '../../asyncStorage/api/gestorAlarme';
 
 const ViewLista = () => {
 
-  //        gestorAlarme.listarAlarme().then((lista) => console.log(lista))
+  const [listaAlerta, setListaAlerta] = useState([])
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    const gestorAlarme = new GestorAlarme()
+
+    gestorAlarme.listarAlarme().then((lista) => setListaAlerta(lista))
+
+    console.log("listaAlerta", listaAlerta)
+  }, [isFocused]);  
+
+  const indentificacaoChave = item => {
+    return item.codigo
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={DATA}
-        renderItem={({item}) => <ViewItem title={item.title} />}
-        keyExtractor={item => item.id}
+        data={listaAlerta}
+        renderItem={({item}) => <ViewItem 
+        hora={item.hora} 
+        atividade={item.atividade}
+        />}
+        keyExtractor={indentificacaoChave}
       />
     </SafeAreaView>
   );

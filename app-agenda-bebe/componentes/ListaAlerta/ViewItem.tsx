@@ -5,11 +5,12 @@ import {
   StyleSheet
 } from 'react-native';
 
-type ItemProps = {title: string};
+type ItemProps = {hora: Date, atividade: string};
 
-const ViewItem = ({title}: ItemProps) => (
+const ViewItem = ({hora, atividade}: ItemProps) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.title}>Hora: {hora == undefined ? hora.getHours().toString() : ""}</Text>
+    <Text style={styles.title}>Atividade: {atividade}</Text>
   </View>
 );
 

@@ -11,9 +11,13 @@ const ViewDadosCrianca = () => {
     function salvarDadosCrianca() {
         const gestorAlarme = new GestorAlarme();
 
+        console.log("nomeAtividade", nomeAtividade)
+
         gestorAlarme.adicionar(
             new Alarme(1, new Date(), nomeAtividade)
         )
+
+        console.log(gestorAlarme.listarAlarme())
     }
 
     return (
@@ -29,8 +33,9 @@ const ViewDadosCrianca = () => {
                 <TextInput
                     value={hora}
                     style={styles.inputHora}
-                    maxLength={2}   inputMode="numeric"
-                    onChange={onChangeHora}
+                    maxLength={2}   
+                    inputMode="numeric"
+                    onChangeText={onChangeHora}
                 />
                 <Text style={styles.tituloTexto}>
                 :
@@ -38,7 +43,7 @@ const ViewDadosCrianca = () => {
                 <TextInput
                     value={minuto}
                     style={styles.inputHora}
-                    onChange={onChangeMinuto}
+                    onChangeText={onChangeMinuto}
                     maxLength={2}
                     inputMode="numeric"
                 />
@@ -48,7 +53,7 @@ const ViewDadosCrianca = () => {
                 Nome da Atividade
             </Text>
             <TextInput
-                onChange={onChangeNomeAtividade}
+                onChangeText={onChangeNomeAtividade}
                 value={nomeAtividade} 
                 style={styles.input} 
             />

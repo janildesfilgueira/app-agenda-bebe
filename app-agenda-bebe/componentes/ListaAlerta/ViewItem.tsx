@@ -11,7 +11,6 @@ type ItemProps = {
 };
 
 const ViewItem = ({hora, atividade}: ItemProps) => {
- 
  const novaHora = new Date(hora)
  const horaFormatada = `${novaHora.getHours()}:${novaHora.getMinutes()}`
 
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
       marginHorizontal: 16,
     },
     title: {
-      fontSize: 32,
+      fontSize: 25,
     },
 });
 

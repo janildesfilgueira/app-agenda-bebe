@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 40,
+    paddingTop: 20,
     height: "90%",
-    width: "90%"
+    width: "100%"
   },
   tituloTexto: {
     fontSize: 20,

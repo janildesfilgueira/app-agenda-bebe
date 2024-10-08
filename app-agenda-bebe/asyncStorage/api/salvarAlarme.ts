@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Alarme } from "../modelo/alarme";
 import { KEY } from "../constants/asyncStorageKey";
 
-export const salvarProduto = async(alarmes: Alarme) => {
+export const salvarAlarme = async(alarmes: Alarme) => {
 
     try {
         const jsonValue = JSON.stringify(alarmes)

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GestorAlarme } from "../../asyncStorage/api/gestorAlarme";
 import { Alarme } from "../../asyncStorage/modelo/alarme";
 
-const ViewDadosCrianca = () => {
+const ViewDadosCrianca = ({ navigation }) => {
     const [hora, onChangeHora] = useState("00");
     const [minuto, onChangeMinuto] = useState("00");
     const [nomeAtividade, onChangeNomeAtividade] = useState("Mamentação");
@@ -14,6 +14,8 @@ const ViewDadosCrianca = () => {
         gestorAlarme.adicionar(
             new Alarme(1, new Date(), nomeAtividade)
         )
+
+        navigation.goBack()
     }
 
     return (

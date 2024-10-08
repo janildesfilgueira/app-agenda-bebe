@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, View, Text, StyleSheet} from 'react-native';
+import ViewLista from '../ListaAlerta/ViewLista';
 
 const ViewTelaPrincipal = ({ navigation }) => {
 
@@ -7,13 +8,13 @@ const ViewTelaPrincipal = ({ navigation }) => {
     navigation.navigate('DadosCrianca')
   }
 
-  //        gestorAlarme.listarAlarme().then((lista) => console.log(lista))
-
   return (
     <View style={styles.container}>
       <Text style={styles.tituloTexto}>
         Lembretes
       </Text>
+
+      <ViewLista />
 
       <Button
         onPress={() => navegarTelaDadosCrianca()}

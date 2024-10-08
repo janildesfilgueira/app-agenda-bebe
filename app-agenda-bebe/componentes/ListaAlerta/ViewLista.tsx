@@ -23,6 +23,9 @@ const DATA = [
 ];
 
 const ViewLista = () => {
+
+  //        gestorAlarme.listarAlarme().then((lista) => console.log(lista))
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList

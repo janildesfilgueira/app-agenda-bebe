@@ -1,10 +1,10 @@
 export class Alarme {
-    codigo: number;
+    codigo: string;
     hora: Date;
     atividade: string;
 
     constructor(
-        codigo: number, 
+        codigo: string, 
         hora: Date, 
         atividade: string
     ){

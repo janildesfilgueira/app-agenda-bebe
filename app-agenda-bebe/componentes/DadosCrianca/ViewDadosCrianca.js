@@ -13,8 +13,11 @@ const ViewDadosCrianca = ({ navigation }) => {
     function salvarDadosCrianca() {
         const gestorAlarme = new GestorAlarme();
 
+        const data = new Date()
+        data.setHours(hora, minuto, 0);
+
         gestorAlarme.adicionar(
-            new Alarme(uuid.v4(), new Date(), nomeAtividade)
+            new Alarme(uuid.v4(), data, nomeAtividade)
         )
 
         navigation.goBack()

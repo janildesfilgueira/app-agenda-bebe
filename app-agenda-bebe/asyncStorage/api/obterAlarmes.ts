@@ -5,7 +5,7 @@ export const obterAlarmes = async () => {
     try {
       const alarmeJson = await AsyncStorage.getItem(KEY);
 
-      return alarmeJson != null ? JSON.parse(alarmeJson) : null;
+      return alarmeJson != null ? JSON.parse(alarmeJson) : [];
     } catch(e) { 
       console.log(e) 
     }
